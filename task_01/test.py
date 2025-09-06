@@ -15,7 +15,8 @@ def test_variables():
     ) = get_variables()
 
     # Проверяем типы и значения
-    assert isinstance(integer_number, int), "integer_number должен быть целым числом"
+    assert isinstance(
+        integer_number, int), "integer_number должен быть целым числом"
 
     assert isinstance(
         float_number, float
@@ -34,7 +35,8 @@ def test_variables():
     ), "boolean_false должен быть логическим значением"
     assert boolean_false is False, "boolean_false должен быть False"
 
-    assert isinstance(list_of_numbers, list), "list_of_numbers должен быть списком"
+    assert isinstance(
+        list_of_numbers, list), "list_of_numbers должен быть списком"
     assert list_of_numbers == [
         1,
         2,
