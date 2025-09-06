@@ -42,8 +42,8 @@ def fizz_buzz(number):
     Иначе возвращает само число в виде строки
     """
     # Ваш код здесь
-    fizzbuzz_string = "Fizz" if number % 3 == 0 else "" \
-        + "Buzz" if number % 5 == 0 else ""
+    fizzbuzz_string = ("Fizz" if number % 3 == 0 else "") \
+        + ("Buzz" if number % 5 == 0 else "")
     return str(number) if len(fizzbuzz_string) == 0 else fizzbuzz_string
 
 
@@ -60,3 +60,4 @@ def grade_converter(score):
     # Ваш код здесь
     if score not in range(0, 100+1):
         return "Invalid score"
+    return {10: "A", 9: "A", 8: "B", 7: "C", 6: "D"}.get(score//10, "F")

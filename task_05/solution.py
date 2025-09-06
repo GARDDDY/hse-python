@@ -7,7 +7,7 @@ def sum_of_numbers(n):
     Возвращает сумму чисел от 1 до n включительно
     """
     # Ваш код здесь
-    pass
+    return n * (n + 1) / 2
 
 
 def factorial(n):
@@ -16,7 +16,7 @@ def factorial(n):
     Для n <= 1 возвращает 1
     """
     # Ваш код здесь
-    pass
+    return 1 if n < 2 else n*factorial(n-1)
 
 
 def count_vowels(s):
@@ -25,7 +25,9 @@ def count_vowels(s):
     Гласные: 'a', 'e', 'i', 'o', 'u' (регистр не имеет значения)
     """
     # Ваш код здесь
-    pass
+    import re
+
+    return re.sub("[aeiouAEIOU]", "@", s).count("@")
 
 
 def find_max(numbers):
@@ -34,7 +36,9 @@ def find_max(numbers):
     Если список пуст, возвращает None
     """
     # Ваш код здесь
-    pass
+    if numbers:
+        return max(numbers)
+    return None
 
 
 def filter_even_numbers(numbers):
@@ -42,7 +46,7 @@ def filter_even_numbers(numbers):
     Возвращает новый список, содержащий только четные числа из списка numbers
     """
     # Ваш код здесь
-    pass
+    return [i for i in numbers if i % 2 == 0]
 
 
 def generate_multiplication_table(n):
@@ -56,4 +60,7 @@ def generate_multiplication_table(n):
     ]
     """
     # Ваш код здесь
-    pass
+    return [
+        [i for i in range(j, (n+1)*j, j)]
+        for j in range(1, n+1)
+    ]

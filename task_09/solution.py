@@ -8,16 +8,20 @@ def create_person(name, age, city):
     с ключами 'name', 'age', 'city'
     """
     # Ваш код здесь
-    pass
+    return {
+        "name": name,
+        "age": age,
+        "city": city
+    }
 
 
-def get_value(dictionary, key, default=None):
+def get_value(dictionary: dict, key, default=None):
     """
     Возвращает значение из словаря по ключу
     Если ключ отсутствует, возвращает default
     """
     # Ваш код здесь
-    pass
+    return dictionary.get(key, default)
 
 
 def update_dict(dictionary, key, value):
@@ -26,7 +30,8 @@ def update_dict(dictionary, key, value):
     Возвращает обновленный словарь
     """
     # Ваш код здесь
-    pass
+    dictionary[key] = value
+    return dictionary
 
 
 def merge_dicts(dict1, dict2):
@@ -38,13 +43,17 @@ def merge_dicts(dict1, dict2):
     pass
 
 
-def invert_dict(dictionary):
+def invert_dict(dictionary: dict):
     """
     Создает новый словарь, где ключи и значения поменяны местами
     Предполагается, что значения в исходном словаре уникальны
     """
     # Ваш код здесь
-    pass
+    new_dict = {}
+    for k, v in dictionary.items():
+        new_dict[v] = k
+
+    return new_dict
 
 
 def count_words(text):
@@ -54,7 +63,11 @@ def count_words(text):
     Слова приводятся к нижнему регистру и очищаются от знаков препинания
     """
     # Ваш код здесь
-    pass
+    import string
+    import re
+    import collections
+    text = re.sub(string.punctuation, "", text)
+    return collections.Counter(text.split())
 
 
 def filter_by_value(dictionary, condition):

@@ -8,7 +8,7 @@ def greet(name):
     Например, "Привет, Иван!"
     """
     # Ваш код здесь
-    pass
+    return f"Привет, {name}!"
 
 
 def absolute_value(number):
@@ -16,7 +16,7 @@ def absolute_value(number):
     Возвращает абсолютное значение числа
     """
     # Ваш код здесь
-    pass
+    return abs(number)
 
 
 def calculate_area(shape, *args):
@@ -34,7 +34,13 @@ def calculate_area(shape, *args):
     - площадь фигуры или None, если тип фигуры неизвестен
     """
     # Ваш код здесь
-    pass
+    import math
+
+    match shape:
+        case "circle": return math.pi * args[0]**2
+        case "rectangle": return math.prod(args)
+        case "triangle": return math.prod(args) / 2
+        case _: return None
 
 
 def apply_operation(operation, a, b):
@@ -49,7 +55,12 @@ def apply_operation(operation, a, b):
     - результат операции или None, если операция неизвестна
     """
     # Ваш код здесь
-    pass
+    match operation:
+        case "add": return a + b
+        case "subtract": return a - b
+        case "multiply": return a * b
+        case "divide": return None if b == 0 else a / b
+        case _: return None
 
 
 def create_multiplier(factor):
@@ -61,7 +72,7 @@ def create_multiplier(factor):
     result = double(5)  # result = 10
     """
     # Ваш код здесь
-    pass
+    return lambda x: x * factor
 
 
 def apply_to_each(func, items):
@@ -73,4 +84,4 @@ def apply_to_each(func, items):
     result = apply_to_each(lambda x: x*2, [1, 2, 3])  # result = [2, 4, 6]
     """
     # Ваш код здесь
-    pass
+    return [func(i) for i in items]
